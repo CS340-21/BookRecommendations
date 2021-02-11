@@ -1,7 +1,6 @@
 # Book Recommendations
 
 ## Team Members
----
 
     * Camille Williford
     * Logan Tillman
@@ -10,13 +9,11 @@
     * Braden Butler
 
 ## Intro
----
 
     Our team is working on an application that recommends books based on their preferences of genre, authors, and desired length. Our goal is to create an application to motivate readers to read more by providing them with a tool that makes selecting their next book easy.
     The main goal of our project is to make it easier on both those getting into reading and avid readers who struggle to find interesting new works. In this way, we are similar to something like Goodreads. However, we hope to set ourselves apart by making an app that also helps users track their progress as readers and not receive redundant suggestions.
 
 ## Customer Value
----
 
 ### Customer Need:
 
@@ -31,7 +28,6 @@
     If the app is able to suggest books to the user within the user given restrictions, and the user selects a new volume to read it will be a success. This app will surely be more time efficient than browsing many resources on the internet for recommendations.    Needs more work, but I’m moving on for now.
 
 ## Technology
----
 
 ### System: 
 	
@@ -46,7 +42,6 @@
     * IDE: VS Code - Frontend | IntelliJ - Backend
 
 ## Team
----
 
 ### Skills:
 
@@ -61,7 +56,6 @@
     * Braden B. - (Backend)
 
 ## Project Management
----
 
 ### Schedule:
 
