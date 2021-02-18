@@ -74,15 +74,6 @@ Logan and Camille have experience using Ember.js to build frontends, as well as 
 | 4/15 | Submission and Presentation |
 
 
-2/19-2/25          Work Begins: Select programming languages, learn basics, map out feature list
-2/26-3/4           Second Sprint: Begin work on GUI, Randomize Google Books API
-3/5-3/11           Iteration 1 Status Report
-3/12-3/18          Third Sprint: Add design to GUI, Add filtering to Google Books API
-3/19-3/25          Iteration 2 Status Report
-3/26-4/1           Fourth Sprint: Implement functionality into GUI, clean up code
-4/2-4/8            Iteration 3 Status Report
-4/9-4/14           Final Sprint: Bug fixes, design tweaks, bonus features
-4/15               Submission and Presentation
 
 ### Constraints:
 	
