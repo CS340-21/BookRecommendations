@@ -54,7 +54,7 @@ Logan and Camille have experience using Ember.js to build frontends, as well as 
 
 * Grant - (Frontend)
 * Logan - (FBackend, Team Leader)
-* Camille - (Backend % Frontend, Customer)
+* Camille - (Backend & Frontend, Customer)
 * Braden M. - (Backend, Customer)
 * Braden B. - (Frontend)
 
