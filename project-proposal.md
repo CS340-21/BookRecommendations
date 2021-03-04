@@ -73,8 +73,6 @@ Logan and Camille have experience using Ember.js to build frontends, as well as 
 | 4/9-4/14 | Final Sprint: Bug fixes, design tweaks, bonus features
 | 4/15 | Submission and Presentation |
 
-
-
 ### Constraints:
 	
 We’re limited to 1000 Google Books API calls per day. There are no legal constraints. We don’t plan on storing user data so there are no ethical constraints either.
