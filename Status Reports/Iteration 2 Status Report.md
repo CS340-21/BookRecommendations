@@ -10,7 +10,7 @@
 
 ## Accomplishments:
 1. Google books API project created and API key acquired
-2. Web app hosted on AWS
+2. Ember app hosted on AWS
 3. Frontend About information added
 
 
