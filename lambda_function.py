@@ -28,9 +28,9 @@ def lambda_handler(event, context):
     #reqResponse['author'] = author
     
     #responseObject = {}
-    #repsonseObject['statusCode'] = 200
-    ##responseObject['headers'] {}
-    #repsonseObject['headers']['Content-Type'] = 'application/json'
-    #repsonseObject['body'] = json.dumps(reqResponse)
+    #responseObject['statusCode'] = 200
+    ##responseObject['headers'] = {}
+    #responseObject['headers']['Content-Type'] = 'application/json'
+    #responseObject['body'] = json.dumps(reqResponse)
     
     #return responseObject
