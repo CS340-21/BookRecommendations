@@ -6,6 +6,10 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    webServiceURL: 'https://mvruajktnk.execute-api.us-east-2.amazonaws.com/prod',
+    contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.amazonaws.com https://*.amazonaws.com"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
