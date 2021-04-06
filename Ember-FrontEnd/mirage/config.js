@@ -1,6 +1,13 @@
+import { findAll } from './utils/mirage-filters'
 export default function() {
 
-  this.get('/books');
+  this.get('https://mvruajktnk.execute-api.us-east-2.amazonaws.com/prod/books', (schema, request) => {
+    if (!schema.db.books.length) {
+      return schema.books.all();
+    }
+
+    return findAll(schema, request, 'books');
+  });
 
   // These comments are here to help you get started. Feel free to delete them.
 

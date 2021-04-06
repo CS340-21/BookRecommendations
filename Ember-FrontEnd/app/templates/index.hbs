@@ -1,0 +1,21 @@
+<div class="page-title">
+  <h3>Books</h3>
+</div>
+<div>
+  {{#each this.model as |book| }}
+    {{book.title}}
+    <br>
+    {{book.author}}
+    <br>
+    {{book.length}}
+    <br>
+    {{book.genre}}
+    <br>
+    {{book.mature}}
+    <br>
+    {{book.thumbnail}}
+    <br><br>
+  {{/each}}
+</div>
+  
+{{outlet}}
