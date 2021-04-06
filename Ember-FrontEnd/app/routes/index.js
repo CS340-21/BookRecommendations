@@ -3,10 +3,11 @@ import { inject as service } from '@ember/service';
 
 export default Route.extend({
   store: service(),
-
+  
   async model() {
     document.title = 'Books';
-    const books = this.store.findAll('book');
+    let books = await this.store.findAll('book');
+    books = books.map((book) => book.toJSON({ includeId: true }));
     this.set('books', books);
     return books;
   },

@@ -1,10 +1,10 @@
-import DS from 'ember-data';
+import Model, { attr } from '@ember-data/model'
 
-export default DS.Model.extend({
-  title: DS.attr('string'),
-  author: DS.attr('string'),
-  length: DS.attr('number'),
-  mature: DS.attr('string'),
-  genre: DS.attr('string'),
-  thumbnail: DS.attr('string'),
+export default Model.extend({
+  title: attr('string'),
+  author: attr('string'),
+  length: attr('number'),
+  mature: attr('string'),
+  genre: attr('string'),
+  thumbnail: attr('string'),
 });
