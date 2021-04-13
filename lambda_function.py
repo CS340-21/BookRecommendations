@@ -4,15 +4,15 @@ from botocore.vendored import requests
 
 def lambda_handler(event, context):
     #parsing parameters
-    author = event['queryStringParameters']['inauthor']
-    genre = event['queryStringParameters']['subject']
-    #author = event['inauthor']
-    #genre = event['subject']
+    author = event['queryStringParameters'].get('inauthor', None)
+    genre = event['queryStringParameters'].get('subject', None)
     
     #building api request string
     reqlink='https://www.googleapis.com/books/v1/volumes?q='
-    reqlink=reqlink+'subject:'+genre
-    reqlink=reqlink+'+inauthor:'+author
+    if (author):
+        reqlink=reqlink+'inauthor:'+ author + '+'
+    if (genre):
+        reqlink=reqlink+'subject:'+ genre + '+'
     reqlink=reqlink+'&maxResults=40'
     print('reqlink: '+reqlink)
     
@@ -41,47 +41,25 @@ def lambda_handler(event, context):
     
     #building our response body with the attributes we care about, looping through all the books and extracting the info we want
     for book in reqjson['items']:
+        
         title=book['volumeInfo'].get('title', None)
         author=book['volumeInfo'].get('authors', None)
         genre=book['volumeInfo'].get('categories', None)
-        #if(book['volumeInfo'].get('industryIdentifiers', None)):
-        #    ISBN=book['volumeInfo']['industryIdentifiers'][0].get('identifier', None)
-        thumbnail=""
+        pageCount=book['volumeInfo'].get('pageCount', None)
+            
+        thumbnail = None
         if(book['volumeInfo'].get('imageLinks')):
-            thumbnail=book['volumeInfo']['imageLinks'].get('thumbnail', 'null')
-        MR=book['volumeInfo'].get('maturityRating', 'null')
-        #print(book['volumeInfo'].get('title', 'null'))
-        #print(book['volumeInfo']['authors'][0])
-        #print(book['volumeInfo']['categories'][0])
-        #print(book['volumeInfo']['industryIdentifiers'][0]['identifier'])
-        #print(book['volumeInfo']['imageLinks']['thumbnail'])
-        #print(book['volumeInfo']['maturityRating'])
-        reqResponse.append({'title': title, 'author': author, 'genre': genre, 'thumbnail': thumbnail, 'maturityRating': MR})
-        #reqResponse.append({'title': book['volumeInfo']['title'], 'author': book['volumeInfo']['authors'][0], 'genre': book['volumeInfo']['categories'][0], 'ISBN-13': book['volumeInfo']['industryIdentifiers'][0]['identifier'], 'thumbnail': book['volumeInfo']['imageLinks']['thumbnail'], 'maturityRating': book['volumeInfo']['maturityRating']})
+            thumbnail=book['volumeInfo']['imageLinks'].get('thumbnail', None)
+            
+        MR=book['volumeInfo'].get('maturityRating', None)
+        reqResponse.append({'title': title, 'author': author, 'genre': genre, 'pageCount': pageCount, 'thumbnail': thumbnail, 'maturityRating': MR})
     return{
        "statusCode": 200,
         "headers": {
             "Content-Type": "application/json"
         },
          "body": json.dumps(reqResponse),
-        #"body": json.dumps(req.json()),
         "isBase64Encoded": False,
     
         
     }
-    
-    ################################
-    #genre = event['subject']
-    #author = event['inauthor']
-    
-    #reqResponse = {}
-    #reqResponse['genre'] = genre
-    #reqResponse['author'] = author
-    
-    #responseObject = {}
-    #responseObject['statusCode'] = 200
-    #responseObject['headers'] = {}
-    #responseObject['headers']['Content-Type'] = 'application/json'
-    #responseObject['body'] = json.dumps(reqResponse)
-    
-    #return responseObject
