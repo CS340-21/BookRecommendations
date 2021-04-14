@@ -6,6 +6,5 @@ export default Mirage.Factory.extend({
   length: 42,
   mature: "M",
   genre: "Young Adult",
-  thumbnail: "nudes",
-
+  thumbnail: "http://books.google.com/books/content?id=A5RteM-rsycC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
 });
