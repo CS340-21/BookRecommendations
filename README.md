@@ -9,7 +9,7 @@ AWS Resources:
     4. Run `ember serve` to test the changes locally
     5. Create a PR for changes
     6. From the master branch, run `ember deploy development`
-    7. Application available at http://cs340-bookproject.s3-website.us-east-2.amazonaws.com/
+    7. Application available at http://dev-cs340-bookproject.s3-website.us-east-2.amazonaws.com/
 
 ## Group Members
     - Camille Williford
