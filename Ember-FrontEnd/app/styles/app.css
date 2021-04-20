@@ -1,0 +1,16 @@
+body{
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.page-title{
+    flex: 0 0 100%;
+}
+#bookdiv{
+    align-items: stretch;
+}
+.books{
+    float: left;
+    margin: 5px;
+}
