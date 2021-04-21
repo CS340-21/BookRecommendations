@@ -15,9 +15,10 @@
 <div class="page-title">
   <h3>Books</h3>
 </div>
-<div>
+<div id="bookdiv">
   {{#each this.model as |book| }}
-    {{book.title}}
+    <div class="books">
+    {{book.title }}
     <br>
     {{book.author}}
     <br>
@@ -29,7 +30,7 @@
     <br>
     <img src={{book.thumbnail}} alt="thumbnail"/>
     <br><br>
+    </div>
   {{/each}}
 </div>
-  
 {{outlet}}
