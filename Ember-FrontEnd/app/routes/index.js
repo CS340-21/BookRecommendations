@@ -1,9 +1,8 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import { resolveConfig } from 'prettier';
 
 export default Route.extend({
-  store: service(),  
+  store: service(),
   async model() {
     document.title = 'Books';
     let books = await this.store.query('book', {
@@ -14,5 +13,4 @@ export default Route.extend({
     this.set('books', books);
     return books;
   },
-
 });
