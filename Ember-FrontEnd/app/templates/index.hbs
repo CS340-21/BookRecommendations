@@ -7,37 +7,30 @@
 </div>
 
 <div>
-  <style>
-  #myButtonId {
-    /* Center-align the text */
-    text-align: center;
-    /* Set the cursor to be a pointer */
-    cursor: pointer;
-}
-</style>
   <label for="Book Title"></label>
   <input type="text" id="Book Title" name="Book Title"><br>
-  <button id="myButtonID"> SEARCH</button>
+  <button type="button" id="myButtonID"> SEARCH</button>
 </div>
 
 <div class="page-title">
   <h3>Books</h3>
 </div>
-<div>
+<div id="bookdiv">
   {{#each this.model as |book| }}
-    {{book.title}}
+    <div class="books">
+    {{book.title }}
     <br>
     {{book.author}}
     <br>
-    {{book.length}}
+    {{book.pageCount}}
     <br>
     {{book.genre}}
     <br>
-    {{book.mature}}
+    {{book.maturityRating}}
     <br>
     <img src={{book.thumbnail}} alt="thumbnail"/>
     <br><br>
+    </div>
   {{/each}}
 </div>
-  
 {{outlet}}
