@@ -1,5 +1,10 @@
+
+<div class="page-title">
+  <h3>Book Recommender</h3>
+</div>
+<div id="head">
 <div>
-  <select onchange={{action "setSelection" value="target.value"}}>
+  <select id="attselect"onchange={{action "setSelection" value="target.value"}}>
   <option disabled selected> -- Select type -- </option>
       <option value="inauthor">Author</option>
       <option value="subject">Genre</option>
@@ -8,16 +13,31 @@
 
 <div>
   <label for="Book Title"></label>
-  <input type="text" id="Book Title" name="Book Title"><br>
+  <input type="text" id="Book Title" name="Book Title" class="searchbar"><br>
+  <div id="buttondiv">
   <button type="button" id="myButtonID"> SEARCH</button>
+  </div>
 </div>
-
-<div class="page-title">
-  <h3>Books</h3>
 </div>
 <div id="bookdiv">
+  <div id="tophr">
+    <hr>
+  </div>
   {{#each this.model as |book| }}
+    <div id="test">
     <div class="books">
+{{!--    {{book.title }}
+    <br>
+    {{book.author}}
+    <br>
+    {{book.pageCount}}
+    <br>
+    {{book.genre}}
+    <br>
+    {{book.maturityRating}}
+    <br>--}}
+    <img src={{book.thumbnail}} alt="thumbnail" class="bookimg"/>
+    <div id="booktext">
     {{book.title }}
     <br>
     {{book.author}}
@@ -28,9 +48,13 @@
     <br>
     {{book.maturityRating}}
     <br>
-    <img src={{book.thumbnail}} alt="thumbnail"/>
-    <br><br>
     </div>
+    </div>
+    </div>
+    <div id="hrdiv">
+    <hr>
+    </div>
+    <br>
   {{/each}}
 </div>
 {{outlet}}
