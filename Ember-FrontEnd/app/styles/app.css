@@ -1,23 +1,88 @@
 body{
-
-    display: flex;
-    flex-wrap: wrap;
-
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica;
 }
 .page-title{
-    flex: 0 0 100%;
+    padding-left: 25px;
+    font-size: 16pt;
+    border: 1px solid lightgray;
+    margin-bottom: 45px;
+    background-color: #f4f1ea;
 }
 #bookdiv{
-    align-items: stretch;
 }
 .books{
-    float: left;
-    margin: 25px;
-}
+ /* centering the books and booktext in the page*/
+    display: table;
+    margin: 0 auto;
 
-#myButtonId {
+    padding-bottom: 20px;
+    position: relative;
+
+}
+#myButtonID {
     /* Center-align the text */
     text-align: center;
     /* Set the cursor to be a pointer */
     cursor: pointer;
+
+    height: 26px;
+
+
+}
+#buttondiv{
+    /*positioning search button next to search bar. requires position: relative in head parent div*/
+    position: absolute;
+    top: 0px;
+    right: -75px;
+
+}
+#booktext{
+    font-family: Helvetica;
+    
+    /*Prevents long titles from breaking onto new line*/
+    white-space: nowrap;
+
+    /*positions the text to the right of the book thumbnail*/
+    position: absolute;
+    top: 0px;
+    left: 132px;
+
+}
+#hrdiv hr{
+    height: 1px;
+    background-color: lightgray;
+    border: none;
+}
+#head{
+/*    this centers the search box and dropdown*/
+    display: table;
+    margin: 0 auto;
+    position: relative;
+}
+#hrdiv{
+    /*centering hr*/
+    width: 50%;
+    margin: 0 auto;
+}
+#tophr{
+    /* centering 1st hr*/
+    width: 50%;
+    margin: 0 auto;
+}
+#tophr hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#head div{
+    float: left;
+}
+.searchbar{
+    height: 20px;
+    margin-left: 5px;
+
+}
+#attselect{
+    height: 26px;
 }
