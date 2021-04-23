@@ -29,15 +29,17 @@
   {{#each this.model as |book| }}
     <div id="test">
     <div class="books">
+    <div id=imgdiv>
     <img src={{book.thumbnail}} alt="thumbnail" class="bookimg"/>
+    </div>
     <div id="booktext">
     {{book.title }}
     <br>
     {{book.author}}
     <br>
-    {{book.pageCount}}
+    Page Count: {{book.pageCount}}
     <br>
-    {{book.genre}}
+    Genre: {{book.genre}}
     <br>
     {{book.maturityRating}}
     <br>
