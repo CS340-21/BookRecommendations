@@ -14,3 +14,10 @@ body{
     float: left;
     margin: 25px;
 }
+
+#myButtonId {
+    /* Center-align the text */
+    text-align: center;
+    /* Set the cursor to be a pointer */
+    cursor: pointer;
+}
