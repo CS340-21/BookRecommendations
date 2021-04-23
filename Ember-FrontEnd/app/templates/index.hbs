@@ -1,4 +1,12 @@
 <div>
+  <select onchange={{action "setSelection" value="target.value"}}>
+  <option disabled selected> -- Select type -- </option>
+      <option value="inauthor">Author</option>
+      <option value="subject">Genre</option>
+  </select>
+</div>
+
+<div>
   <style>
   #myButtonId {
     /* Center-align the text */
