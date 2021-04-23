@@ -46,10 +46,15 @@ def lambda_handler(event, context):
     for book in reqjson['items']:
         
         title=book['volumeInfo'].get('title', None)
-        author=book['volumeInfo'].get('authors', [None])
-        author=author[0]
-        genre=book['volumeInfo'].get('categories', [None])
-        genre=genre[0]
+        author=book['volumeInfo'].get('authors', None)
+        
+        if(author!=None):
+            authorjoin=", ".join(author) #did it update?
+            author=authorjoin
+        genre=book['volumeInfo'].get('categories', None)
+        if(genre!=None):
+            genrejoin=", ".join(genre)
+            genre=genrejoin
         pageCount=book['volumeInfo'].get('pageCount', None)
         id=book.get('id', None)
             
