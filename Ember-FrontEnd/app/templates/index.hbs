@@ -3,24 +3,24 @@
   <h3>Book Recommender</h3>
 </div>
 <div id="head">
-<div>
-  <select id="attselect" onchange={{action "setSelection" value="target.value"}}>
-  <option disabled selected> -- Select filter -- </option>
-      <option value="inauthor">Author</option>
-      <option value="subject">Genre</option>
-  </select>
-</div>
+  <div>
+    <select id="attselect" onchange={{action "setSelection" value="target.value"}}>
+    <option disabled selected> -- Select filter -- </option>
+        <option value="inauthor">Author</option>
+        <option value="subject">Genre</option>
+    </select>
+  </div>
 
-<div>
-  <label for="userInput"></label>
-  <Input
-    @class="searchbar"
-    @id="userInput"
-    @type="text"
-    @value={{this.userInput}}
-    @enter={{action "search"}}
-    />
-</div>
+  <div>
+    <label for="userInput"></label>
+    <Input
+      @class="searchbar"
+      @id="userInput"
+      @type="text"
+      @value={{this.userInput}}
+      @enter={{action "search"}}
+      />
+  </div>
 </div>
 <div id="bookdiv">
   <div id="tophr">
@@ -28,36 +28,36 @@
   </div>
   {{#each this.model as |book| }}
     <div id="test">
-    <div class="books">
-    <div id="imgdiv">
-    <img src={{book.thumbnail}} alt="thumbnail" class="bookimg"/>
-    </div>
-    <div id="booktext">
-    {{#if book.title}}
-      {{book.title }}
-      <br>
-    {{/if}}
-    {{#if book.author}}
-      {{book.author}}
-      <br>
-    {{/if}}
-    {{#if book.pageCount}}
-      Page Count: {{book.pageCount}}
-      <br>
-    {{/if}}
-    {{#if book.genre}}
-      Genre: {{book.genre}}
-      <br>
-    {{/if}}
-    {{#if book.maturityRating}}
-      {{book.maturityRating}}
-      <br>
-    {{/if}}
-    </div>
-    </div>
+      <div class="books">
+        <div id="imgdiv">
+          <img src={{book.thumbnail}} alt="thumbnail" class="bookimg"/>
+        </div>
+        <div id="booktext">
+          {{#if book.title}}
+            {{book.title }}
+            <br>
+          {{/if}}
+          {{#if book.author}}
+            {{book.author}}
+            <br>
+          {{/if}}
+          {{#if book.pageCount}}
+            Page Count: {{book.pageCount}}
+            <br>
+          {{/if}}
+          {{#if book.genre}}
+            Genre: {{book.genre}}
+            <br>
+          {{/if}}
+          {{#if book.maturityRating}}
+            {{book.maturityRating}}
+            <br>
+          {{/if}}
+        </div>
+      </div>
     </div>
     <div id="hrdiv">
-    <hr>
+      <hr>
     </div>
     <br>
   {{/each}}
