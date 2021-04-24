@@ -33,16 +33,26 @@
     <img src={{book.thumbnail}} alt="thumbnail" class="bookimg"/>
     </div>
     <div id="booktext">
-    {{book.title }}
-    <br>
-    {{book.author}}
-    <br>
-    Page Count: {{book.pageCount}}
-    <br>
-    Genre: {{book.genre}}
-    <br>
-    {{book.maturityRating}}
-    <br>
+    {{#if book.title}}
+      {{book.title }}
+      <br>
+    {{/if}}
+    {{#if book.author}}
+      {{book.author}}
+      <br>
+    {{/if}}
+    {{#if book.pageCount}}
+      Page Count: {{book.pageCount}}
+      <br>
+    {{/if}}
+    {{#if book.genre}}
+      Genre: {{book.genre}}
+      <br>
+    {{/if}}
+    {{#if book.maturityRating}}
+      {{book.maturityRating}}
+      <br>
+    {{/if}}
     </div>
     </div>
     </div>
