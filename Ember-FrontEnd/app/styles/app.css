@@ -92,6 +92,8 @@ body{
 }
 #imgdiv{
     min-height: 140px;
+    max-width: 128px;
+    min-width: 128px;
 }
 #userInput{
     width: 200%;
