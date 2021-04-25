@@ -31,6 +31,10 @@ body{
 
 
 }
+#logo{
+    width: 125px;
+    height: 125px;
+}
 #buttondiv{
     /*positioning search button next to search bar. requires position: relative in head parent div*/
     position: absolute;
