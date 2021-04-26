@@ -7,9 +7,16 @@ export default Controller.extend({
         setSelection: function(selected) {
             this.set('selectedOption', selected);
             console.log(this.selectedOption);
+            this.set('filterError', null);
         },
         search: async function(){
             console.log(this.userInput);
+
+            if (this.selectedOption == null) {
+                this.set('filterError', "Please select a filter type");
+                return;
+            }
+
             let books = {};
             if (this.selectedOption == "inauthor") {
                 books = await this.store.query('book', {

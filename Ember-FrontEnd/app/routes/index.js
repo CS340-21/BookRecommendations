@@ -3,6 +3,8 @@ import { inject as service } from '@ember/service';
 
 export default Route.extend({
   store: service(),
+  selectedOption: null,
+  filterError: null,
   async model() {
     document.title = 'Books';
     let books = await this.store.query('book', {
