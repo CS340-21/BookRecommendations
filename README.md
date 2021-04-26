@@ -1,5 +1,5 @@
 # BookRecommendations
-![alt text](softwareArchitecture)
+![alt text](softwareArchitecture.png)
 
 AWS Resources:
     We use role based access control (RBAC) to manages users, resources, and contributions. Ask Camille to create an AWS user for you.
