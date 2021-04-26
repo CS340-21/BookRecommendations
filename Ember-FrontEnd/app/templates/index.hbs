@@ -1,10 +1,9 @@
-
 <div class="page-title">
-  <img src = "/assets/images/logo.png" id = "logo">
+  <img src="/assets/images/logo.png" id="logo" alt="owlImg"/>
 </div>
 <div id="head">
   <div>
-    <select id="attselect" onchange={{action "setSelection" value="target.value"}}>
+    <select class="text" id="attselect" onchange={{action "setSelection" value="target.value"}}>
     <option disabled selected> -- Select filter -- </option>
         <option value="inauthor">Author</option>
         <option value="subject">Genre</option>
@@ -14,46 +13,45 @@
   <div>
     <label for="userInput"></label>
     <Input
-      @class="searchbar"
+      @class="text searchbar"
+      @placeholder="Author or Genre"
       @id="userInput"
       @type="text"
       @value={{this.userInput}}
       @enter={{action "search"}}
       />
+      {{#if this.filterError}}
+        <p class="text error">{{this.filterError}}</p>
+      {{/if}}
   </div>
 </div>
-<div id="bookdiv">
+
   <div id="tophr">
     <hr>
   </div>
   {{#each this.model as |book| }}
-    <div id="test">
-      <div class="books">
-        <div id="imgdiv">
-          <img src={{book.thumbnail}} alt="thumbnail" class="bookimg"/>
-        </div>
-        <div id="booktext">
-          {{#if book.title}}
-            {{book.title }}
-            <br>
-          {{/if}}
-          {{#if book.author}}
-            {{book.author}}
-            <br>
-          {{/if}}
-          {{#if book.pageCount}}
-            Page Count: {{book.pageCount}}
-            <br>
-          {{/if}}
-          {{#if book.genre}}
-            Genre: {{book.genre}}
-            <br>
-          {{/if}}
-          {{#if book.maturityRating}}
-            {{book.maturityRating}}
-            <br>
-          {{/if}}
-        </div>
+    <div class="book">
+      {{#if book.thumbnail}}
+        <img src={{book.thumbnail}} alt="thumbnail" class="bookimg"/>
+      {{else}}
+        <img src="/assets/images/noThumbnail.png" id="blankThumbnail" alt="blankThumbnail"/>
+      {{/if}}
+      <div id="booktext">
+        {{#if book.title}}
+          <p class="text title">{{book.title}}</p>
+        {{/if}}
+        {{#if book.author}}
+          <p class="text author">by {{book.author}}</p>
+        {{/if}}
+        {{#if book.pageCount}}
+          <p class="text"><b>Page Count:</b> {{book.pageCount}}</p>
+        {{/if}}
+        {{#if book.genre}}
+          <p class="text"><b>Genre:</b> {{book.genre}}</p>
+        {{/if}}
+        {{#if book.maturityRating}}
+          <p class="text"><b>Rated:</b> {{book.maturityRating}}</p>
+        {{/if}}
       </div>
     </div>
     <div id="hrdiv">
@@ -61,5 +59,5 @@
     </div>
     <br>
   {{/each}}
-</div>
+
 {{outlet}}
