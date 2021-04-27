@@ -109,3 +109,6 @@ body{
 #userInput{
     width: 150%;
 }
+#searchError{
+    text-align: center;
+}
