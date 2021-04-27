@@ -18,17 +18,25 @@ export default Controller.extend({
             }
 
             let books = {};
-            if (this.selectedOption == "inauthor") {
-                books = await this.store.query('book', {
-                    inauthor: this.userInput,
-                });
-            } else {
-                books = await this.store.query('book', {
-                    subject: this.userInput,
-                });
+
+            try {
+                if (this.selectedOption == "inauthor") {
+                    books = await this.store.query('book', {
+                        inauthor: this.userInput,
+                    });
+                } else {
+                    books = await this.store.query('book', {
+                        subject: this.userInput,
+                    });
+                }
+            } catch (err) {
+                this.set('searchError', `No results found for \"${this.userInput}\". Please refine search criteria.`);
+                return;
             }
-              books = books.map((book) => book.toJSON({ includeId: true }));
-              this.set('model', books);
+
+            this.set('searchError', null);
+            books = books.map((book) => book.toJSON({ includeId: true }));
+            this.set('model', books);
         }
     }
 });

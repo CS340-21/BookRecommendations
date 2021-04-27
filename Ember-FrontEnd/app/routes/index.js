@@ -5,6 +5,7 @@ export default Route.extend({
   store: service(),
   selectedOption: null,
   filterError: null,
+  searchError: null,
   async model() {
     document.title = 'Books';
     let books = await this.store.query('book', {
