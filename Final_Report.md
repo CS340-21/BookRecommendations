@@ -55,16 +55,17 @@ Ember.js is a framework that enables quick, flexible, detailed builds with ample
 
 The main software component of our project is the Lambda function that serves as our API backend.  Connected through an AWS API Gateway, our lambda function is essentially another API that allows us to perform server-side functions without having to set up our own server. This function is implemented in python, and builds the Google Books API request string based on user parameters. After that, it sends the request and reduces the response body to a more manageable format for our front end.
 
-
+![alt text](https://github.com/CS340-21/BookRecommendations/blob/master/lambda_code.png?raw=true)
 
 The Google Books API has lots of metadata on books, which can be very complicated to parse through on the front end. This image displays the method we used in our Lambda function to reduce the response body to a less-cluttered format. To reduce the response, we simply grab the attributes we want from the original response body, and append them to a new responseObject, which we send to our front end for much simpler parsing. This data reduction simplified the response parsing on the front end, since our entire response body for twenty books matching the search criteria was now smaller than the original response for a single book.
 
 ⅓ of Original Response Body for a Single Book
 
+![alt text](https://github.com/CS340-21/BookRecommendations/blob/master/GBAPI_RB.png?raw=true)
 
 Reduced Response Body of a Single Book
 
-
+![alt text](https://github.com/CS340-21/BookRecommendations/blob/master/lambda_RB.png?raw=true)
 
 Overall, while we encountered difficulties during parts of the design process, we eventually fixed all of the issues we encountered. Although setting up mirage took a significant amount of time and effort, we eventually got it to work, just in time for us to not need it anymore. Additionally, the issues we encountered with the Books API returning null attributes was remedied by checking for null response attributes in our Lambda function and adding special code to our frontend to display null attributes in specific ways. An issue with the s3 deployment caused us to have to delete the objects in the s3 bucket every time we wanted to deploy changes to our web host, this issue was annoying, but didn’t significantly impact development. Finally, we had issues with our response body from our Lambda API not being in a readable format for Ember to interpret, we fixed this issue by creating a serializer to alter the format to Ember-readable JSONAPI format. Additionally, our front end development went well once we got past Mirage.
 
